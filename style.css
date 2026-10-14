@@ -1,0 +1,2799 @@
+/* ============================================================
+   ANKIT PARDHI
+   FUTURISTIC PORTFOLIO
+   COMPLETE STYLE SHEET
+============================================================ */
+
+
+/* ============================================================
+   1. RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #050509;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(
+        circle at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.25)
+    );
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ============================================================
+   2. BACKGROUND
+============================================================ */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 60, 255, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 20, 147, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(0, 229, 255, 0.08),
+            transparent 30%
+        ),
+        #050509;
+}
+
+
+/* ============================================================
+   3. GLOWING ORBS
+============================================================ */
+
+.gradient-orb {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.23;
+
+    animation:
+        floatingOrb 14s ease-in-out infinite;
+}
+
+.orb-1 {
+    background: #7c3cff;
+
+    left: -160px;
+    top: -130px;
+}
+
+.orb-2 {
+    background: #ff1493;
+
+    right: -170px;
+    top: 30%;
+
+    animation-delay: -4s;
+}
+
+.orb-3 {
+    background: #00e5ff;
+
+    left: 40%;
+    bottom: -220px;
+
+    animation-delay: -8s;
+}
+
+@keyframes floatingOrb {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(70px, -50px)
+            scale(1.15);
+    }
+}
+
+
+/* ============================================================
+   4. BACKGROUND GRID
+============================================================ */
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* ============================================================
+   5. LOADER
+============================================================ */
+
+#loader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #050509;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+#loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 85px;
+    height: 85px;
+
+    margin: auto;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 60, 255, 0.3),
+            rgba(255, 20, 147, 0.2)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 0 50px
+        rgba(124, 60, 255, 0.45);
+
+    animation:
+        loaderLogo 2s ease-in-out infinite;
+}
+
+@keyframes loaderLogo {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.loader-text {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+}
+
+.loader-bar {
+    width: 260px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+.loader-bar span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-100%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3cff,
+            #ff1493,
+            #00e5ff
+        );
+
+    animation:
+        loaderBar 2.5s ease forwards;
+}
+
+@keyframes loaderBar {
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.loader-content p {
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   6. NAVBAR
+============================================================ */
+
+.navbar {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1200px, 92%);
+
+    min-height: 65px;
+
+    padding: 12px 18px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(9, 9, 16, 0.68);
+
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 15px 60px
+        rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #b45cff;
+
+    text-shadow:
+        0 0 18px #b45cff;
+}
+
+.navbar nav {
+    display: flex;
+
+    gap: 28px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #999;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3cff,
+            #ff1493
+        );
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* ============================================================
+   7. COMMON BUTTONS
+============================================================ */
+
+.primary-btn,
+.secondary-btn,
+.edit-btn,
+.add-section-btn,
+.small-add-btn,
+.save-btn {
+    border: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Primary */
+
+.primary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3cff,
+            #ff1493
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(124, 60, 255, 0.28);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(255, 20, 147, 0.35);
+}
+
+
+/* Secondary */
+
+.secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(180, 92, 255, 0.4);
+}
+
+
+/* Edit */
+
+.edit-btn {
+    padding: 11px 17px;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3cff,
+            #ff1493
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(124, 60, 255, 0.25);
+}
+
+.edit-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(255, 20, 147, 0.35);
+}
+
+
+/* ============================================================
+   8. SECTIONS
+============================================================ */
+
+.section {
+    width: min(1150px, 90%);
+
+    margin: auto;
+
+    padding-top: 140px;
+    padding-bottom: 80px;
+
+    position: relative;
+}
+
+
+/* ============================================================
+   9. HERO
+============================================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding-top: 160px;
+}
+
+.hero-small-text {
+    margin-bottom: 18px;
+
+    color: #a76cff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size:
+        clamp(55px, 9vw, 115px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b45cff,
+            #ff1493,
+            #00e5ff,
+            #ffffff
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+
+    to {
+        background-position:
+            300% center;
+    }
+}
+
+.hero-role {
+    margin-top: 30px;
+
+    color: #00e5ff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 19px;
+}
+
+.typing-text {
+    border-right:
+        2px solid
+        #00e5ff;
+
+    padding-right: 7px;
+
+    animation:
+        blink 0.8s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin-top: 25px;
+
+    color: #92929c;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+
+/* ============================================================
+   10. HERO SOCIALS
+============================================================ */
+
+.hero-socials {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.hero-socials a {
+    padding: 8px 13px;
+
+    border-radius: 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #999;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.hero-socials a:hover {
+    color: white;
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(180, 92, 255, 0.45);
+
+    background:
+        rgba(124, 60, 255, 0.12);
+
+    box-shadow:
+        0 10px 30px
+        rgba(124, 60, 255, 0.15);
+}
+
+
+/* ============================================================
+   11. HERO VISUAL
+============================================================ */
+
+.hero-visual {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-circle {
+    width:
+        min(430px, 75vw);
+
+    aspect-ratio: 1;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-placeholder {
+    width: 230px;
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 5;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 55px;
+
+    font-weight: 800;
+
+    background:
+        radial-gradient(
+            circle,
+            #27164c,
+            #09090e
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 0 90px
+        rgba(124, 60, 255, 0.4),
+        inset 0 0 50px
+        rgba(255, 20, 147, 0.15);
+
+    animation:
+        profileFloat 5s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+.circle-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    animation:
+        rotateRing 15s linear infinite;
+}
+
+.ring-1 {
+    inset: 5%;
+
+    border-top-color:
+        #7c3cff;
+}
+
+.ring-2 {
+    inset: 13%;
+
+    border-right-color:
+        #ff1493;
+
+    animation-duration:
+        20s;
+
+    animation-direction:
+        reverse;
+}
+
+.ring-3 {
+    inset: 21%;
+
+    border-bottom-color:
+        #00e5ff;
+
+    animation-duration:
+        10s;
+}
+
+@keyframes rotateRing {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   12. SECTION HEADING
+============================================================ */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: #ff1493;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 12px;
+}
+
+.section-heading h2 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size:
+        clamp(30px, 5vw, 55px);
+
+    letter-spacing: -2px;
+}
+
+
+/* ============================================================
+   13. GLASS CARD
+============================================================ */
+
+.glass-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 80px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================================================
+   14. ABOUT
+============================================================ */
+
+.about-card {
+    padding: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        80px
+        1fr;
+
+    gap: 30px;
+}
+
+.about-number {
+    color: #b45cff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 35px;
+
+    text-shadow:
+        0 0 20px
+        #7c3cff;
+}
+
+.about-card h3 {
+    margin-bottom: 18px;
+
+    font-size: 28px;
+}
+
+.about-card p {
+    margin-bottom: 12px;
+
+    color: #92929c;
+
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   15. SKILLS
+============================================================ */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: #7c3cff;
+
+    filter: blur(75px);
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(180, 92, 255, 0.4);
+
+    box-shadow:
+        0 20px 60px
+        rgba(124, 60, 255, 0.15);
+}
+
+.skill-card:hover::before {
+    opacity: 0.25;
+}
+
+.skill-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(124, 60, 255, 0.12);
+
+    font-size: 25px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #858590;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   16. ADD SECTION BUTTON
+============================================================ */
+
+.add-section-btn {
+    margin-top: 30px;
+
+    padding: 13px 22px;
+
+    border:
+        1px dashed
+        rgba(180, 92, 255, 0.5);
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+        rgba(124, 60, 255, 0.08);
+}
+
+.add-section-btn:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(124, 60, 255, 0.18);
+
+    border-color:
+        #b45cff;
+}
+
+
+/* ============================================================
+   17. PROJECT INTRO
+============================================================ */
+
+.projects-intro {
+    max-width: 700px;
+
+    margin-top: -20px;
+
+    margin-bottom: 30px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   18. PROJECT GRID
+============================================================ */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ============================================================
+   19. PROJECT CARD
+============================================================ */
+
+.project-card {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    transition:
+        transform 0.35s ease,
+        border 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -120px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background:
+        #ff1493;
+
+    filter:
+        blur(85px);
+
+    opacity: 0.15;
+
+    transition: 0.5s;
+}
+
+.project-card:hover {
+    border-color:
+        rgba(255, 20, 147, 0.45);
+
+    box-shadow:
+        0 30px 80px
+        rgba(255, 20, 147, 0.13);
+}
+
+.project-card:hover::before {
+    opacity: 0.3;
+}
+
+.project-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 15px;
+
+    font-size: 27px;
+}
+
+.project-card p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+
+    color: #858590;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.project-number {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 30px;
+
+    color: #b45cff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.project-tags {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.project-tag {
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+}
+
+.project-click-hint {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #00e5ff;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s;
+}
+
+.project-card:hover
+.project-click-hint {
+    transform:
+        translateX(6px);
+
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   20. PROJECT DETAIL MODAL
+============================================================ */
+
+.project-detail-panel {
+    width:
+        min(950px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    position: relative;
+
+    border-radius:
+        26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 17, 29, 0.98),
+            rgba(7, 7, 13, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 35px 120px
+        rgba(0, 0, 0, 0.75);
+
+    transform:
+        translateY(30px)
+        scale(0.96);
+
+    transition:
+        transform 0.4s ease;
+
+    overflow-x: hidden;
+}
+
+.modal.active
+.project-detail-panel {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* ============================================================
+   21. PROJECT DETAIL IMAGE
+============================================================ */
+
+.project-detail-image {
+    width: 100%;
+
+    height: 300px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 60, 255, 0.35),
+            rgba(5, 5, 9, 0.95)
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.project-detail-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 40%,
+            rgba(7, 7, 13, 0.95)
+        );
+}
+
+
+/* ============================================================
+   22. PROJECT DETAIL CONTENT
+============================================================ */
+
+.project-detail-content {
+    padding: 40px;
+}
+
+.project-detail-number {
+    color: #00e5ff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.project-detail-content h2 {
+    margin-top: 10px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size:
+        clamp(30px, 5vw, 55px);
+
+    line-height: 1.1;
+}
+
+.project-detail-description {
+    max-width: 800px;
+
+    margin-top: 20px;
+
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+/* ============================================================
+   23. DETAIL BLOCK
+============================================================ */
+
+.detail-block {
+    margin-top: 35px;
+}
+
+.detail-block h3 {
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   24. PROJECT FEATURES
+============================================================ */
+
+.project-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.project-features li {
+    position: relative;
+
+    padding: 13px 15px 13px 38px;
+
+    border-radius: 10px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.055);
+}
+
+.project-features li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 15px;
+
+    color: #00e5ff;
+
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   25. PROJECT INFO GRID
+============================================================ */
+
+.project-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.project-info-grid > div {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+}
+
+.project-info-grid span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.project-info-grid strong {
+    color: #ddd;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   26. PROJECT DETAIL BUTTONS
+============================================================ */
+
+.project-detail-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+/* ============================================================
+   27. MODAL BASE
+============================================================ */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter:
+        blur(15px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* ============================================================
+   28. CLOSE BUTTON
+============================================================ */
+
+.close-btn {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 20;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    font-size: 23px;
+
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background:
+        #ff1493;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* ============================================================
+   29. EDITOR PANEL
+============================================================ */
+
+.editor-panel {
+    width:
+        min(850px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    position: relative;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 30, 0.98),
+            rgba(8, 8, 14, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.7);
+
+    transform:
+        translateY(30px)
+        scale(0.96);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.modal.active
+.editor-panel {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* ============================================================
+   30. FORM PANEL
+============================================================ */
+
+.form-panel {
+    width:
+        min(620px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    position: relative;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 30, 0.98),
+            rgba(8, 8, 14, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.7);
+
+    transform:
+        translateY(30px)
+        scale(0.96);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.modal.active
+.form-panel {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.form-panel h2 {
+    margin-bottom: 30px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 28px;
+}
+
+
+/* ============================================================
+   31. EDITOR HEADER
+============================================================ */
+
+.editor-header {
+    margin-bottom: 30px;
+}
+
+.editor-header > span {
+    color: #00e5ff;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.editor-header h2 {
+    margin-top: 10px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 30px;
+}
+
+.editor-header p {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   32. EDITOR SECTION
+============================================================ */
+
+.editor-section {
+    margin-top: 30px;
+}
+
+.editor-section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.editor-section-title h3 {
+    font-size: 18px;
+}
+
+.small-add-btn {
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 11px;
+
+    background:
+        rgba(124, 60, 255, 0.18);
+
+    border:
+        1px solid
+        rgba(124, 60, 255, 0.35);
+}
+
+.small-add-btn:hover {
+    background:
+        rgba(124, 60, 255, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ============================================================
+   33. SOCIAL EDITOR
+============================================================ */
+
+.social-editor-form {
+    display: grid;
+
+    gap: 8px;
+}
+
+.social-editor-form label {
+    margin-top: 8px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+.social-editor-form input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.social-editor-form input:focus {
+    border-color:
+        #7c3cff;
+
+    box-shadow:
+        0 0 20px
+        rgba(124, 60, 255, 0.12);
+}
+
+.social-editor-form input::placeholder {
+    color: #555;
+}
+
+
+/* ============================================================
+   34. EDITOR LIST
+============================================================ */
+
+.editor-list {
+    display: grid;
+
+    gap: 10px;
+}
+
+.editor-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+}
+
+.editor-item-info {
+    min-width: 0;
+}
+
+.editor-item-info strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+.editor-item-info small {
+    display: block;
+
+    overflow: hidden;
+
+    color: #666;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.editor-actions {
+    display: flex;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+}
+
+.editor-actions button {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    transition: 0.3s;
+}
+
+.editor-actions
+.edit-action:hover {
+    background:
+        #7c3cff;
+
+    transform:
+        translateY(-2px);
+}
+
+.editor-actions
+.delete-action:hover {
+    background:
+        #ff245c;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ============================================================
+   35. EDITOR FOOTER
+============================================================ */
+
+.editor-footer {
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.save-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3cff,
+            #ff1493
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(124, 60, 255, 0.2);
+}
+
+.save-btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(255, 20, 147, 0.3);
+}
+
+
+/* ============================================================
+   36. FORMS
+============================================================ */
+
+.portfolio-form {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.portfolio-form.active {
+    display: flex;
+}
+
+.portfolio-form label {
+    margin-top: 8px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+.portfolio-form input,
+.portfolio-form textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    outline: none;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    transition: 0.3s;
+}
+
+.portfolio-form textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.portfolio-form input:focus,
+.portfolio-form textarea:focus {
+    border-color:
+        #7c3cff;
+
+    box-shadow:
+        0 0 20px
+        rgba(124, 60, 255, 0.12);
+}
+
+.portfolio-form input::placeholder,
+.portfolio-form textarea::placeholder {
+    color: #555;
+}
+
+.portfolio-form .save-btn {
+    margin-top: 20px;
+}
+
+
+/* ============================================================
+   37. EDUCATION TIMELINE
+============================================================ */
+
+.timeline {
+    position: relative;
+
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            #7c3cff,
+            #ff1493,
+            transparent
+        );
+}
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: -31px;
+
+    top: 30px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background:
+        #b45cff;
+
+    box-shadow:
+        0 0 20px
+        #b45cff;
+}
+
+.timeline-card {
+    padding: 30px;
+}
+
+.timeline-card span {
+    color: #00e5ff;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 11px;
+}
+
+.timeline-card h3 {
+    margin-top: 12px;
+
+    margin-bottom: 8px;
+}
+
+.timeline-card p {
+    color: #858590;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   38. CONTACT
+============================================================ */
+
+.contact-card {
+    padding: 70px 40px;
+
+    text-align: center;
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(28px, 5vw, 55px);
+}
+
+.contact-card > p {
+    margin-bottom: 30px;
+
+    color: #888;
+}
+
+
+/* ============================================================
+   39. CONTACT SOCIALS
+============================================================ */
+
+.contact-socials {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.contact-socials a {
+    min-width: 120px;
+
+    padding: 12px 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 11px;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.contact-socials a span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 23px;
+    height: 23px;
+
+    border-radius: 7px;
+
+    color: white;
+
+    background:
+        rgba(124, 60, 255, 0.25);
+
+    font-size: 10px;
+}
+
+.contact-socials a:hover {
+    color: white;
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(180, 92, 255, 0.4);
+
+    background:
+        rgba(124, 60, 255, 0.12);
+
+    box-shadow:
+        0 15px 35px
+        rgba(124, 60, 255, 0.12);
+}
+
+
+/* ============================================================
+   40. EMPTY STATE
+============================================================ */
+
+.empty-state {
+    padding: 35px;
+
+    grid-column:
+        1 / -1;
+
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #666;
+
+    font-size: 13px;
+}
+
+.editor-empty {
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    color: #666;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   41. SCROLL REVEAL
+============================================================ */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ============================================================
+   42. SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #050509;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            #7c3cff,
+            #ff1493
+        );
+}
+
+
+/* ============================================================
+   43. SELECTION
+============================================================ */
+
+::selection {
+    color: white;
+
+    background:
+        #7c3cff;
+}
+
+
+/* ============================================================
+   44. MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        width: 94%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+
+    .hero {
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+
+        padding-top: 150px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 20px;
+    }
+
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .projects-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* ============================================================
+   45. TABLET
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .section {
+        width: 91%;
+
+        padding-top: 110px;
+    }
+
+
+    .hero h1 {
+        font-size: 60px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .about-card {
+        grid-template-columns:
+            1fr;
+
+        padding: 30px;
+    }
+
+
+    .about-number {
+        font-size: 25px;
+    }
+
+
+    .project-detail-image {
+        height: 230px;
+    }
+
+
+    .project-detail-content {
+        padding: 30px 22px;
+    }
+
+
+    .project-features {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* ============================================================
+   46. MOBILE
+============================================================ */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        top: 10px;
+
+        padding:
+            10px 12px;
+
+        border-radius:
+            14px;
+    }
+
+
+    .logo {
+        font-size: 16px;
+    }
+
+
+    .edit-btn {
+        padding:
+            9px 11px;
+
+        font-size:
+            10px;
+    }
+
+
+    .section {
+        width: 90%;
+    }
+
+
+    .hero {
+        padding-top:
+            125px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            48px;
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .hero-role {
+        font-size:
+            15px;
+    }
+
+
+    .hero-buttons {
+        flex-direction:
+            column;
+    }
+
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+
+    .hero-socials {
+        gap: 6px;
+    }
+
+
+    .hero-socials a {
+        padding:
+            7px 9px;
+
+        font-size:
+            10px;
+    }
+
+
+    .profile-placeholder {
+        width:
+            175px;
+
+        height:
+            175px;
+
+        font-size:
+            40px;
+    }
+
+
+    .skills-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .about-card {
+        padding:
+            25px;
+    }
+
+
+    .project-card {
+        min-height:
+            280px;
+
+        padding:
+            25px;
+    }
+
+
+    .project-card h3 {
+        font-size:
+            23px;
+    }
+
+
+    .project-detail-panel {
+        max-height:
+            94vh;
+
+        border-radius:
+            18px;
+    }
+
+
+    .project-detail-image {
+        height:
+            190px;
+    }
+
+
+    .project-detail-content {
+        padding:
+            25px 18px;
+    }
+
+
+    .project-detail-content h2 {
+        font-size:
+            30px;
+    }
+
+
+    .project-detail-buttons {
+        flex-direction:
+            column;
+    }
+
+
+    .project-detail-buttons a {
+        width:
+            100%;
+    }
+
+
+    .editor-panel,
+    .form-panel {
+        padding:
+            25px 18px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .editor-item {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .editor-actions {
+        width:
+            100%;
+    }
+
+
+    .editor-actions button {
+        flex:
+            1;
+    }
+
+
+    .contact-card {
+        padding:
+            45px 20px;
+    }
+
+
+    .contact-socials {
+        flex-direction:
+            column;
+    }
+
+
+    .contact-socials a {
+        width:
+            100%;
+    }
+
+}
+
+
+/* ============================================================
+   47. EXTRA GLOW ANIMATION
+============================================================ */
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px
+            rgba(
+                124,
+                60,
+                255,
+                0.18
+            );
+    }
+
+    50% {
+        box-shadow:
+            0 0 50px
+            rgba(
+                255,
+                20,
+                147,
+                0.35
+            );
+    }
+
+}
+
+.hero-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    border: 3px solid rgba(0, 220, 255, 0.8);
+    box-shadow:
+        0 0 20px rgba(0, 220, 255, 0.5),
+        0 0 50px rgba(168, 50, 255, 0.4);
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+

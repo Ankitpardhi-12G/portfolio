@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ankit Pardhi | Full Stack Developer</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+    <div class="background">
+
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+
+        <div class="grid-background"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+     LOADER
+========================================================= -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                AP
+            </div>
+
+            <div class="loader-text">
+                ANKIT PARDHI
+            </div>
+
+            <div class="loader-bar">
+                <span></span>
+            </div>
+
+            <p>
+                Loading Portfolio...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span><span>AP<span></span>
+        </div>
+
+
+        <nav>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button class="edit-btn" id="openEditorBtn">
+            ✦ Edit Portfolio
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================================================
+     MAIN
+========================================================= -->
+
+    <main>
+
+
+        <!-- =========================================================
+     HERO
+========================================================= -->
+
+        <section id="home" class="hero section">
+
+            <div class="hero-content reveal">
+
+                <p class="hero-small-text">
+                    HELLO, I'M
+                </p>
+
+
+                <h1>
+                    ANKIT
+                    <span>PARDHI</span>
+                </h1>
+
+
+                <div class="hero-role">
+
+                    <span class="typing-text">
+                        Full Stack Developer
+                    </span>
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    I build modern, interactive and scalable
+                    web applications with powerful frontend
+                    and backend technologies.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="primary-btn">
+                        View My Work
+                    </a>
+
+
+                    <a href="#contact" class="secondary-btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+
+                <!-- HERO SOCIAL LINKS -->
+
+                <div class="hero-socials">
+
+                    <a id="heroGithub" href="#" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        GitHub
+                    </a>
+
+
+                    <a id="heroLinkedin" href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        LinkedIn
+                    </a>
+
+
+                    <a id="heroInstagram" href="#" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        Instagram
+                    </a>
+
+
+                    <a id="heroEmail" href="mailto:" title="Email">
+                        Email
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO VISUAL -->
+
+            <div class="hero-visual reveal">
+
+                <div class="hero-orb">
+                    <div class="orb-ring ring-1"></div>
+                    <div class="orb-ring ring-2"></div>
+                    <div class="orb-ring ring-3"></div>
+
+                    <div class="hero-photo">
+                        <img src="white_black.jpeg" alt="Ankit Pardhi">
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     ABOUT
+========================================================= -->
+
+        <section id="about" class="about section">
+
+            <div class="section-heading reveal">
+
+                <span>
+                    01
+                </span>
+
+                <h2>
+                    About Me
+                </h2>
+
+            </div>
+
+
+            <div class="about-card glass-card reveal">
+
+                <div class="about-number">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Building Digital Experiences
+                    </h3>
+
+
+                    <p>
+                        I'm Ankit Pardhi, a B.Tech Artificial
+                        Intelligence & Data Science student
+                        and Full Stack Developer.
+                    </p>
+
+
+                    <p>
+                        I enjoy creating beautiful frontend
+                        interfaces, powerful backend systems
+                        and interactive web experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     SKILLS
+========================================================= -->
+
+        <section id="skills" class="skills section">
+
+            <div class="section-heading reveal">
+
+                <span>
+                    02
+                </span>
+
+                <h2>
+                    My Skills
+                </h2>
+
+            </div>
+
+
+            <!-- Skills JavaScript se render honge -->
+
+            <div id="skillsContainer" class="skills-grid">
+            </div>
+
+
+            <button class="add-section-btn" id="addSkillBtn">
+                + Add New Skill
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+        <section id="projects" class="projects section">
+
+            <div class="section-heading reveal">
+
+                <span>
+                    03
+                </span>
+
+                <h2>
+                    My Projects
+                </h2>
+
+            </div>
+
+
+            <p class="projects-intro reveal">
+                Click any project to explore complete details,
+                technologies, features and live website.
+            </p>
+
+
+            <!-- Projects JavaScript se render honge -->
+
+            <div id="projectsContainer" class="projects-grid">
+            </div>
+
+
+            <button class="add-section-btn" id="addProjectBtn">
+                + Add New Project
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+        <section id="education" class="education section">
+
+            <div class="section-heading reveal">
+
+                <span>
+                    04
+                </span>
+
+                <h2>
+                    Education
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+
+                    <div class="glass-card timeline-card">
+
+                        <span>
+                            2024 - Present
+                        </span>
+
+
+                        <h3>
+                            B.Tech Artificial Intelligence
+                            & Data Science
+                        </h3>
+
+
+                        <p>
+                            Undergraduate Student
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+
+                    <div class="glass-card timeline-card">
+
+                        <span>
+                            Full Stack Development
+                        </span>
+
+
+                        <h3>
+                            Frontend + Backend
+                        </h3>
+
+
+                        <p>
+                            Building complete web applications
+                            and modern digital experiences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+     CONTACT
+========================================================= -->
+
+        <section id="contact" class="contact section">
+
+            <div class="section-heading reveal">
+
+                <span>
+                    05
+                </span>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+            </div>
+
+
+            <div class="contact-card glass-card reveal">
+
+                <h3>
+                    Have a project in mind?
+                </h3>
+
+
+                <p>
+                    Let's build something amazing together.
+                </p>
+
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="contact-socials">
+
+                    <a id="contactLinkedin" href="#" target="_blank" rel="noopener noreferrer">
+                        <span>in</span>
+                        LinkedIn
+                    </a>
+
+
+                    <a id="contactGithub" href="#" target="_blank" rel="noopener noreferrer">
+                        <span>GH</span>
+                        GitHub
+                    </a>
+
+
+                    <a id="contactInstagram" href="#" target="_blank" rel="noopener noreferrer">
+                        <span>◎</span>
+                        Instagram
+                    </a>
+
+
+                    <a id="contactEmail" href="mailto:">
+                        <span>@</span>
+                        Email
+                    </a>
+
+                </div>
+
+
+                <a href="#" id="contactEmailButton" class="primary-btn">
+                    Send Message
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+     PROJECT DETAIL MODAL
+========================================================= -->
+
+    <div id="projectDetailModal" class="modal">
+
+        <div class="project-detail-panel">
+
+            <button id="closeProjectDetailBtn" class="close-btn">
+                ×
+            </button>
+
+
+            <!-- Project image -->
+
+            <div id="projectDetailImage" class="project-detail-image">
+            </div>
+
+
+            <div class="project-detail-content">
+
+
+                <span id="projectDetailNumber" class="project-detail-number">
+                    PROJECT 01
+                </span>
+
+
+                <h2 id="projectDetailTitle">
+                    Project Name
+                </h2>
+
+
+                <p id="projectDetailDescription" class="project-detail-description">
+                    Project description.
+                </p>
+
+
+                <!-- Technologies -->
+
+                <div class="detail-block">
+
+                    <h3>
+                        Technologies
+                    </h3>
+
+
+                    <div id="projectDetailTags" class="project-tags">
+                    </div>
+
+                </div>
+
+
+                <!-- Features -->
+
+                <div class="detail-block">
+
+                    <h3>
+                        Features
+                    </h3>
+
+
+                    <ul id="projectDetailFeatures" class="project-features">
+                    </ul>
+
+                </div>
+
+
+                <!-- Project Info -->
+
+                <div class="project-info-grid">
+
+                    <div>
+
+                        <span>
+                            Role
+                        </span>
+
+                        <strong id="projectDetailRole">
+                            Full Stack Developer
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong id="projectDetailDuration">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Project Buttons -->
+
+                <div class="project-detail-buttons">
+
+                    <a id="projectDetailLive" href="#" target="_blank" rel="noopener noreferrer" class="primary-btn">
+                        🌐 Visit Website
+                    </a>
+
+
+                    <a id="projectDetailGithub" href="#" target="_blank" rel="noopener noreferrer"
+                        class="secondary-btn">
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+     EDITOR MODAL
+========================================================= -->
+
+    <div id="editorModal" class="modal">
+
+        <div class="editor-panel">
+
+            <button id="closeEditorBtn" class="close-btn">
+                ×
+            </button>
+
+
+            <div class="editor-header">
+
+                <span>
+                    PORTFOLIO CMS
+                </span>
+
+
+                <h2>
+                    Edit Portfolio
+                </h2>
+
+
+                <p>
+                    Manage your skills, projects and social links.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+             SOCIAL / CONTACT SETTINGS
+        ================================================== -->
+
+            <div class="editor-section">
+
+                <div class="editor-section-title">
+
+                    <h3>
+                        Social & Contact
+                    </h3>
+
+                </div>
+
+
+                <div class="social-editor-form">
+
+
+                    <label>
+                        📧 Email
+                    </label>
+
+                    <input type="email" id="socialEmail" placeholder="yourname@gmail.com">
+
+
+                    <label>
+                        💼 LinkedIn
+                    </label>
+
+                    <input type="url" id="socialLinkedin" placeholder="https://linkedin.com/in/username">
+
+
+                    <label>
+                        🐙 GitHub
+                    </label>
+
+                    <input type="url" id="socialGithub" placeholder="https://github.com/username">
+
+
+                    <label>
+                        📸 Instagram
+                    </label>
+
+                    <input type="url" id="socialInstagram" placeholder="https://instagram.com/username">
+
+
+                    <label>
+                        🔗 Other Profile / Website
+                    </label>
+
+                    <input type="url" id="socialOther" placeholder="https://example.com">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+             SKILLS EDITOR
+        ================================================== -->
+
+            <div class="editor-section">
+
+                <div class="editor-section-title">
+
+                    <h3>
+                        Skills
+                    </h3>
+
+
+                    <button id="editorAddSkillBtn" class="small-add-btn" type="button">
+                        + Add Skill
+                    </button>
+
+                </div>
+
+
+                <div id="editorSkillsList" class="editor-list">
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+             PROJECTS EDITOR
+        ================================================== -->
+
+            <div class="editor-section">
+
+                <div class="editor-section-title">
+
+                    <h3>
+                        Projects
+                    </h3>
+
+
+                    <button id="editorAddProjectBtn" class="small-add-btn" type="button">
+                        + Add Project
+                    </button>
+
+                </div>
+
+
+                <div id="editorProjectsList" class="editor-list">
+                </div>
+
+            </div>
+
+
+
+            <!-- SAVE -->
+
+            <div class="editor-footer">
+
+                <button id="savePortfolioBtn" class="save-btn" type="button">
+                    ✓ Save All Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+     ADD / EDIT FORM MODAL
+========================================================= -->
+
+    <div id="formModal" class="modal">
+
+        <div class="form-panel">
+
+            <button id="closeFormBtn" class="close-btn">
+                ×
+            </button>
+
+
+            <h2 id="formTitle">
+                Add New Project
+            </h2>
+
+
+
+            <!-- =================================================
+             PROJECT FORM
+        ================================================== -->
+
+            <form id="projectForm" class="portfolio-form">
+
+                <input type="hidden" id="projectId">
+
+
+                <label>
+                    Project Name
+                </label>
+
+                <input type="text" id="projectName" placeholder="Gym Management System" required>
+
+
+                <label>
+                    Short / Full Description
+                </label>
+
+                <textarea id="projectDescription" placeholder="Explain your project in detail..." required></textarea>
+
+
+                <label>
+                    Technologies
+                </label>
+
+                <input type="text" id="projectTags" placeholder="HTML, CSS, JavaScript, React, Node.js">
+
+
+                <label>
+                    Project Features
+                </label>
+
+                <textarea id="projectFeatures" placeholder="Member management, Login system, Dashboard..."></textarea>
+
+
+                <label>
+                    Your Role
+                </label>
+
+                <input type="text" id="projectRole" placeholder="Full Stack Developer">
+
+
+                <label>
+                    Project Duration
+                </label>
+
+                <input type="text" id="projectDuration" placeholder="2 Months">
+
+
+                <label>
+                    Project Image URL
+                </label>
+
+                <input type="url" id="projectImage" placeholder="https://example.com/project-image.jpg">
+
+
+                <label>
+                    Live Website URL
+                </label>
+
+                <input type="url" id="projectLive" placeholder="https://yourproject.com">
+
+
+                <label>
+                    GitHub URL
+                </label>
+
+                <input type="url" id="projectGithub" placeholder="https://github.com/username/project">
+
+
+                <button type="submit" class="save-btn">
+                    ✓ Save Project
+                </button>
+
+            </form>
+
+
+
+            <!-- =================================================
+             SKILL FORM
+        ================================================== -->
+
+            <form id="skillForm" class="portfolio-form">
+
+                <input type="hidden" id="skillId">
+
+
+                <label>
+                    Skill Name
+                </label>
+
+                <input type="text" id="skillName" placeholder="JavaScript" required>
+
+
+                <label>
+                    Icon / Emoji
+                </label>
+
+                <input type="text" id="skillIcon" placeholder="⚡">
+
+
+                <label>
+                    Skill Description
+                </label>
+
+                <textarea id="skillDescription" placeholder="Frontend development..." required></textarea>
+
+
+                <button type="submit" class="save-btn">
+                    ✓ Save Skill
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
