@@ -50,11 +50,11 @@ const DEFAULT_SOCIAL = {
 
     email: "yourmail@example.com",
 
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/ankit-pardhi-21a6912ab/",
 
-    github: "https://github.com/",
+    github: "https://github.com/Ankitpardhi-12G",
 
-    instagram: "https://www.instagram.com/",
+    instagram: "https://instagram.com/ankit__pardhi86?xtok=MTk3N2UxeWl1bHk0NA%3D%3D",
 
     other: ""
 
